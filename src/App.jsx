@@ -1,22 +1,41 @@
+import React from 'react';
 import './App.css';
+import allCatsApi from './Api';
+import catsData from './data';
 
 const App = () => {
+
+  const [catImage, setCatImage] = React.useState('');
+
+  React.useEffect(() => {
+    allCatsApi.getCatImage()
+    .then((data) => {
+      setCatImage(data[0].url)
+    })
+    .catch((err) => console.log(err));
+  }, [])
+
   return (
     <div className="App">
-      <CatsList />
+      <CatsList source={catImage}/>
     </div>
   );
 }
 
-const CatsList = () => {
+const CatsList = ({source}) => {
   return (
     <div className="catlist">
-      <Cat
-        source="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1858&q=80"
-        name="Whiskers"
-        breed="British Shorthair"
-        price="100.00"
+      {catsData.map((item, i) => (
+        <Cat
+          key={i}
+          source={source}  
+          name={item.name}
+          breed={item.breed}
+          price={item.price}
         />
+        ))
+      }
+      
     </div>
   )
 }
@@ -26,7 +45,7 @@ const Cat = (props) => {
     <div className="cat">
       
       <div className="cat-image">
-        <img src={props.source} />
+        <img src={props.source} alt={props.name}/>
       </div>
 
       <div className="cat-name">
