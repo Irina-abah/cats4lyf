@@ -11,26 +11,28 @@
 }
 
 /* .App {
-  text-align: center;
+  width: 1360px;
 } */
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--bg);
 }
 
 .catlist {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-
+  display: grid;
+	grid-template-columns: repeat(4, auto);
+	grid-template-rows: repeat(auto, auto);
+	margin: 20px;
 }
 
 .cat {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 300px;
+  max-width: 300px;
   padding: 20px;
   margin: 20px;
   background-color: var(--cat-bg);
@@ -50,7 +52,7 @@ body {
 
 .cat-image {
   width: 100%;
-  height: 260px;
+  height: 220px;
   
 }
 
@@ -90,6 +92,32 @@ body {
 .cat button:hover {
   color: white;
   font-weight: bold;
-  background-color: var(--accent-dark);
-  border-color: var(--accent-dark);
+  background-color: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+
+@media all and (max-width: 1250px) {
+  .catlist {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media all and (max-width: 900px) {
+  .catlist {
+    grid-template-columns: repeat(2, auto);
+    margin: 15px;
+  }
+  .cat {
+    margin: 15px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .catlist {
+    margin: 10px;
+  }
+  .cat {
+    margin: 10px;
+  }
 }
