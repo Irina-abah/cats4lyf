@@ -132,7 +132,7 @@ body {
   max-width: 520px;
   width: 100%;
   max-height: 80vh;
-  height: 100%;
+  min-height: 45vh;
   overflow-y: auto;
   background-color: #fff;
   padding: 15px;
