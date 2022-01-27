@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Cat from "./components/Cat";
 import './App.css';
+import Basket from "./components/Basket";
 
 const App = () => {
-  const [cats, setCats] = useState([])
+  const [cats, setCats] = React.useState([]);
+  const [open, setOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     getCats()
   }, [])
 
@@ -14,6 +16,10 @@ const App = () => {
     const data = await response.json()
     console.log(data)
     setCats(data)
+  }
+
+  function closeBasket() {
+    setOpen(!open)
   }
 
   return (
@@ -28,6 +34,7 @@ const App = () => {
           />
         ))}
       </div>
+      {open && <Basket onClose={closeBasket}/>}
     </div>
   )
 }
