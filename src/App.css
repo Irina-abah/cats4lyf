@@ -1,13 +1,13 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 :root {
-  --bg: #efefef;
-  --cat-bg: #ffffff;
-  --accent-light: #FFAA9A;
-  --accent-dark: #F9765F;
+	--bg: #efefef;
+	--cat-bg: #ffffff;
+	--accent-light: #ffaa9a;
+	--accent-dark: #f9765f;
 }
 
 /* .App {
@@ -15,116 +15,102 @@
 } */
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--bg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--bg);
 }
 
 .catlist {
-  display: grid;
+	display: grid;
 	grid-template-columns: repeat(4, auto);
 	grid-template-rows: repeat(auto, auto);
 	margin: 20px;
 }
 
 .cat {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 300px;
-  padding: 20px;
-  margin: 10px;
-  background-color: var(--cat-bg);
-  border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 300px;
+	padding: 20px;
+	margin: 10px;
+	background-color: var(--cat-bg);
+	border-radius: 10px;
 }
 
 .cat-name {
-  padding: 10px 0;
+	padding: 10px 0;
 }
-.cat-name h4, h5 {
-  font-size: 16px;
-  margin: 2px 0;
-}
-.cat-name h5 {
-  font-weight: normal;
+.cat h4 {
+	font-size: 16px;
+	font-weight: normal;
+	margin: 2px 0;
 }
 
 .cat-image {
-  width: 100%;
-  min-height: 250px;
-  max-height: 250px;
-  
+	width: 250px;
+	height: 250px;
 }
 
 .cat-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
 }
 
-/* .cat-buy {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 20px;
-} */
-
 .cat h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+	font-size: 20px;
 }
 
 .cat button {
-  color: var(--accent-light);
-  background-color: transparent;
-  font-size: 16px;
-  padding: 8px;
-  border: none;
-  border: 2px solid var(--accent-light);
-  border-radius: 5px;
-  padding: 12px;
-  cursor: pointer;
-  transition: background-color 0.15s, border-color 0.15s, font-weight 0.15s;
+	color: var(--accent-light);
+	background-color: transparent;
+	font-size: 16px;
+	padding: 8px;
+	border: none;
+	border: 2px solid var(--accent-light);
+	border-radius: 5px;
+	padding: 12px;
+	cursor: pointer;
+	transition: background-color 0.15s, border-color 0.15s, font-weight 0.15s;
 }
 
 .cat button:hover {
-  color: white;
-  font-weight: bold;
-  background-color: var(--accent-light);
-  border-color: var(--accent-light);
+	color: white;
+	font-weight: bold;
+	background-color: var(--accent-light);
+	border-color: var(--accent-light);
 }
 
-
 @media all and (max-width: 1300px) {
-  .catlist {
-    grid-template-columns: repeat(3, auto);
-    margin: 10px;
-  }
-  .cat {
-    margin: 10px;
-  }
+	.catlist {
+		grid-template-columns: repeat(3, auto);
+		margin: 10px;
+	}
+	.cat {
+		margin: 10px;
+	}
 }
 
 @media all and (max-width: 768px) {
-  .catlist {
-    grid-template-columns: repeat(2, auto);
-    margin: 10px;
-  }
+	.catlist {
+		grid-template-columns: repeat(2, auto);
+		margin: 10px;
+	}
 
-  .cat {
-    margin: 10px;
-  }
+	.cat {
+		margin: 10px;
+	}
 }
 
 @media all and (max-width: 600px) {
-  .cat-image {
-    min-height: 200px;
-    max-height: 200px;
-  }
-  .cat {
-    margin: 5px;
-  }
+	.cat-image {
+		min-height: 200px;
+		max-height: 200px;
+	}
+	.cat {
+		margin: 5px;
+	}
 }
