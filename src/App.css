@@ -34,16 +34,16 @@ body {
   justify-content: center;
   max-width: 300px;
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
   background-color: var(--cat-bg);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .cat-name {
   padding: 10px 0;
 }
 .cat-name h4, h5 {
-  font-size: 17px;
+  font-size: 16px;
   margin: 2px 0;
 }
 .cat-name h5 {
@@ -52,7 +52,8 @@ body {
 
 .cat-image {
   width: 100%;
-  height: 220px;
+  min-height: 250px;
+  max-height: 250px;
   
 }
 
@@ -60,7 +61,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 /* .cat-buy {
@@ -72,18 +73,18 @@ body {
 } */
 
 .cat h3 {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .cat button {
   color: var(--accent-light);
   background-color: transparent;
-  font-size: 17px;
+  font-size: 16px;
   padding: 8px;
   border: none;
   border: 2px solid var(--accent-light);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 12px;
   cursor: pointer;
   transition: background-color 0.15s, border-color 0.15s, font-weight 0.15s;
@@ -97,27 +98,33 @@ body {
 }
 
 
-@media all and (max-width: 1250px) {
+@media all and (max-width: 1300px) {
   .catlist {
     grid-template-columns: repeat(3, auto);
+    margin: 10px;
+  }
+  .cat {
+    margin: 10px;
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 768px) {
   .catlist {
     grid-template-columns: repeat(2, auto);
-    margin: 15px;
+    margin: 10px;
   }
+
   .cat {
-    margin: 15px;
+    margin: 10px;
   }
 }
 
 @media all and (max-width: 600px) {
-  .catlist {
-    margin: 10px;
+  .cat-image {
+    min-height: 200px;
+    max-height: 200px;
   }
   .cat {
-    margin: 10px;
+    margin: 5px;
   }
 }
