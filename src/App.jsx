@@ -5,7 +5,7 @@ import Basket from "./components/Basket";
 
 const App = () => {
   const [cats, setCats] = React.useState([]);
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     getCats()
