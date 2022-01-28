@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import Cat from "./components/Cat";
+import Footer from "./components/Footer"
 import Basket from "./components/Basket";
 
 const App = () => {
@@ -29,16 +31,22 @@ const App = () => {
   return (
     <div className="app">
       <Navbar />
-      <div className="catlist">
-        {cats.map(cat => (
-          <Cat
-          key={cat.id}
-          image={cat.image.url}
-          breed={cat.name}
-          temperament={cat.temperament}
-          />
-        ))}
+      <Header />
+      <div id="cats" className="catlist-box">
+        <h2>Browse cats for sale</h2>
+        <div className="catlist">
+          {cats.map(cat => (
+            <Cat
+            key={cat.id}
+            image={cat.image.url}
+            breed={cat.name}
+            temperament={cat.temperament}
+            />
+          ))}
+        </div>
       </div>
+      <Footer />
+      
       {open && <Basket onClose={closeBasket}/>}
     </div>
   )

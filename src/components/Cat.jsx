@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "./Cat.css";
 import faker from "faker";
 
 const Cat = ({image, breed, temperament}) => {
