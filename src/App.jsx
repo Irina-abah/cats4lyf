@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Cat from "./components/Cat";
 import './App.css';
+import Navbar from "./components/Navbar";
+import Cat from "./components/Cat";
 import Basket from "./components/Basket";
 
 const App = () => {
@@ -26,7 +27,8 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="app">
+      <Navbar />
       <div className="catlist">
         {cats.map(cat => (
           <Cat
