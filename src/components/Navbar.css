@@ -12,7 +12,7 @@
 
 .navbar ul {
     list-style-type: none;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .navbar ul li a, 
@@ -23,9 +23,13 @@
 }
 
 .navbar img {
-    width: 137px;
-    height: inherit;
+width: 75px;
+height: inherit;
+border-radius: 12px;
+margin-bottom: -5px;
 }
+
+
 
 .nav-menu {
     display: flex;
