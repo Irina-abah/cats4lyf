@@ -7,6 +7,7 @@ import Basket from "./components/Basket";
 const App = () => {
   const [cats, setCats] = React.useState([]);
   const [open, setOpen] = React.useState(false);
+  const [basketItem, setBasketItems] = React.useState([]);
 
   const [limit, setLimit] = React.useState(16);
   const [page, setPage] = React.useState(0);
@@ -22,13 +23,17 @@ const App = () => {
     setCats(data)
   }
 
-  function closeBasket() {
+  function handleBasket() {
     setOpen(!open)
+  }
+
+  function handleAddClick(cat) {
+    
   }
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar handleBasketClick={handleBasket}/>
       <div className="catlist">
         {cats.map(cat => (
           <Cat
@@ -36,10 +41,11 @@ const App = () => {
           image={cat.image.url}
           breed={cat.name}
           temperament={cat.temperament}
+          handleAddClick={handleAddClick}
           />
         ))}
       </div>
-      {open && <Basket onClose={closeBasket}/>}
+      {open && <Basket onClose={handleBasket}/>}
     </div>
   )
 }
