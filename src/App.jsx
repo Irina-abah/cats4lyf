@@ -8,7 +8,7 @@ const App = () => {
   const [open, setOpen] = React.useState(false);
 
   const [limit, setLimit] = React.useState(16);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = React.useState(0);
 
   React.useEffect(() => {
     getCats()
@@ -32,7 +32,7 @@ const App = () => {
           <Cat
           key={cat.id}
           image={cat.image.url}
-          name={cat.name}
+          breed={cat.name}
           temperament={cat.temperament}
           />
         ))}

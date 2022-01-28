@@ -1,10 +1,18 @@
 import React from "react";
 import "../App.css";
+import faker from "faker";
 
-const Cat = ({image, name, temperament}) => {
+const Cat = ({image, breed, temperament}) => {
+
+    const getName = () => {
+        let fakerName = faker.name.firstName();
+        return fakerName;
+    }
 
     const getPrice = () => {
-        return Math.floor(Math.random() * (1000 - 200)) + 200;
+        // return Math.floor(Math.random() * (1000 - 200)) + 200;
+        let fakerPrice = faker.datatype.number({min: 200, max: 1000});
+        return fakerPrice;
     }
 
     return (
@@ -15,7 +23,8 @@ const Cat = ({image, name, temperament}) => {
                     <img src={image} alt="" />
                 </div>
                 <div className="cat-name">
-                    <h4>{name}</h4>
+                    <h3>{getName()}</h3>
+                    <h4>{breed}</h4>
                     <p>{temperament}</p>
                 </div>
             </div>
