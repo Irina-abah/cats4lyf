@@ -7,12 +7,15 @@ const App = () => {
   const [cats, setCats] = React.useState([]);
   const [open, setOpen] = React.useState(false);
 
+  const [limit, setLimit] = React.useState(16);
+  const [page, setPage] = useState(0);
+
   React.useEffect(() => {
     getCats()
   }, [])
 
   const getCats = async () => {
-    const response = await fetch("https://api.thecatapi.com/v1/breeds?limit=12")
+    const response = await fetch(`https://api.thecatapi.com/v1/breeds?limit=${limit}&page=${page}&order=asc`)
     const data = await response.json()
     console.log(data)
     setCats(data)
