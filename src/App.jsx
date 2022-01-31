@@ -42,7 +42,7 @@ const App = () => {
       <div id="cats" className="catlist-box">
         <h2>Browse cats for sale</h2>
         <div className="catlist">
-          {/* {cats.map(cat => (
+          {cats.map(cat => (
             <Cat
             key={cat.id}
             image={cat.image.url}
@@ -50,7 +50,7 @@ const App = () => {
             temperament={cat.temperament}
             onAddClick={handleAddClick}
             />
-          ))} */}
+          ))}
         </div>
       </div>
       <Footer />
