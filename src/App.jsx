@@ -9,7 +9,7 @@ import Basket from "./components/Basket";
 const App = () => {
   const [cats, setCats] = React.useState([]);
   const [open, setOpen] = React.useState(false);
-  const [basketItem, setBasketItems] = React.useState([]);
+  const [basketItems, setBasketItems] = React.useState([]);
 
   const [limit, setLimit] = React.useState(16);
   const [page, setPage] = React.useState(0);
@@ -30,7 +30,9 @@ const App = () => {
   }
 
   function handleAddClick(cat) {
-    
+    // const clicked = cats.some((item) => item.id === cat.id);
+    // setBasketItems(clicked)
+
   }
 
   return (
@@ -40,79 +42,25 @@ const App = () => {
       <div id="cats" className="catlist-box">
         <h2>Browse cats for sale</h2>
         <div className="catlist">
-          {cats.map(cat => (
+          {/* {cats.map(cat => (
             <Cat
             key={cat.id}
             image={cat.image.url}
             breed={cat.name}
             temperament={cat.temperament}
+            onAddClick={handleAddClick}
             />
-          ))}
+          ))} */}
         </div>
       </div>
       <Footer />
-      {open && <Basket onClose={handleBasket}/>}
+      {open && 
+      <Basket 
+        onClose={handleBasket}
+        addedCats={cats}
+        />}
     </div>
   )
 }
 
 export default App;
-
-
-// import allCatsApi from './Api';
-// import catsData from './data';
-
-// const App = () => {
-
-//   const [catImage, setCatImage] = React.useState('');
-
-//   React.useEffect(() => {
-//     allCatsApi.getCatImage()
-//     .then((data) => {
-//       setCatImage(data[0].url)
-//     })
-//     .catch((err) => console.log(err));
-//   }, [])
-
-//   return (
-//     <div className="App">
-//       <CatsList source={catImage}/>
-//     </div>
-//   );
-// }
-
-// const CatsList = ({source}) => {
-//   return (
-//     <div className="catlist">
-//       {catsData.map((item, i) => (
-//         <Cat
-//           key={i}
-//           source={source}  
-//           name={item.name}
-//           breed={item.breed}
-//           price={item.price}
-//         />
-//         ))
-//       }
-//     </div>
-//   )
-// }
-
-// const Cats = (props) => {
-//   return (
-//     <div className="cat">
-      
-//       <div className="cat-image">
-//         <img src={props.source} alt={props.name}/>
-//       </div>
-
-//       <div className="cat-name">
-//         <h4>{props.name}</h4>
-//         <h5>{props.breed}</h5>
-//       </div>
-      
-//       <h3>£{props.price}</h3>
-//       <button>Add to Cart</button>
-//     </div>
-//   )
-// }

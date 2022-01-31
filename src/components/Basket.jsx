@@ -41,14 +41,14 @@ const Basket = ({addedCats, onClose}) => {
           </button>
           <h2 className="title">Items in your basket</h2>
           <div className="cart-items">
-            {addedCats.map(cat => (
+            {/* {addedCats.map(cat => (
               <BasketItem
               key={cat.id}
               image={cat.image.url}
               temperament={cat.temperament}
               price={cat.price}
               />
-            ))}
+            ))} */}
           </div>
           <h3 className="subtotal">Subtotal: value to calculate</h3>
           <div className="buttons">
