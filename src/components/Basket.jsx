@@ -1,6 +1,7 @@
 import React from 'react';
+import BasketItem from './BasketItem';
 
-const Basket = ({children, onClose}) => {
+const Basket = ({addedCats, onClose}) => {
 
 //  const totalPrice = data.reduce(
 //     function (sum, item) {
@@ -25,7 +26,7 @@ const Basket = ({children, onClose}) => {
   }
   }, [onClose]);
 
-  const buttonClass = (`${children ? "button_type_checkout" : "button_disabled"}`); 
+  const buttonClass = (`${addedCats ? "button_type_checkout" : "button_disabled"}`); 
 
 
   return (
@@ -40,7 +41,14 @@ const Basket = ({children, onClose}) => {
           </button>
           <h2 className="title">Items in your basket</h2>
           <div className="cart-items">
-            {children}
+            {/* {addedCats.map(cat => (
+              <BasketItem
+              key={cat.id}
+              image={cat.image.url}
+              temperament={cat.temperament}
+              price={cat.price}
+              />
+            ))} */}
           </div>
           <h3 className="subtotal">Subtotal: value to calculate</h3>
           <div className="buttons">

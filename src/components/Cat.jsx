@@ -2,7 +2,7 @@ import React from "react";
 import "./Cat.css";
 import faker from "faker";
 
-const Cat = ({image, breed, temperament}) => {
+const Cat = ({image, breed, temperament, handleClick, onAddClick}) => {
 
     const getName = () => {
         let fakerName = faker.name.firstName();
@@ -14,6 +14,10 @@ const Cat = ({image, breed, temperament}) => {
         let fakerPrice = faker.datatype.number({min: 200, max: 1000});
         return fakerPrice;
     }
+
+    const handleAddClick = () => {
+      onAddClick({image, breed, temperament, handleClick});
+  }
 
     return (
         <div className="cat">
@@ -31,7 +35,7 @@ const Cat = ({image, breed, temperament}) => {
             
             <div className="cat-buy">
                 <h3>£{getPrice()}</h3>
-                <button>Add to Cart</button>
+                <button onClick={handleAddClick}>Add to Cart</button>
             </div>
             
         </div>

@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from '../images/logo.png'
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({handleBasketClick}) => {
     const [click, setClick] = useState(false)
 
     const handleClick = () => setClick(!click)
@@ -15,7 +15,7 @@ const Navbar = () => {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'><a href='/'>Home</a></li>
-                <li className='nav-item'><a href='/'>Basket</a></li>
+                <li className='nav-item' onClick={handleBasketClick}><a href='#'>Basket</a></li>
                 <li className='nav-item'><a href='/'>Checkout</a></li>
             </ul>
             <div className='hamburger' onClick={handleClick}>
